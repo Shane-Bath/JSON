@@ -1,6 +1,7 @@
 
 // Initialize the map- leaflet mapping
-const map = L.map('map').setView([0, 0], 1);
+const map = L.map('map').setView([0, 0,], 1
+    );
 
 //Add map tile - openstreetmap
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -16,7 +17,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 });
 
 //Place a marker on the map
-const marker = L.marker([0, 0], {icon: issMarker}).addTo(map);
+const marker = L.marker([0, 0],{icon: issMarker}).addTo(map);
 
 // API address - Data used to mark the map
 let url = "https://api.wheretheiss.at/v1/satellites/25544";
@@ -32,7 +33,7 @@ async function getISS() {
     
     //Use data to position marker on the map
     marker.setLatLng([latitude, longitude]);
-   
+    map.setView([latitude, longitude], 3);
 
     //Display data into the HTML document  
     document.getElementById('lat').textContent = (data.latitude);
@@ -41,3 +42,7 @@ async function getISS() {
 
     //Run the function
     getISS();
+
+    //Update the location of the marker- refresh information 
+
+    setInterval(getISS, 4000);
