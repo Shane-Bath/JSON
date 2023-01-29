@@ -1,4 +1,18 @@
 #map { 
-    height: 180px;
+    height: 360px;
+    min-width: 80%;
 }
 
+h1 {
+    font: bold;
+    font-family: 'Titan One', cursive;
+}
+
+p { 
+    font-family: 'Overpass', sans-serif;;
+    font-weight: 800;
+}
+
+#time {
+    text-transform:capitalize;
+}

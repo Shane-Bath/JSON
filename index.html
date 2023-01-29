@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Overpass:wght@400;800&family=Roboto:ital,wght@0,100;0,400;1,900&family=Titan+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-     crossorigin=""/>
-    
-     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-     crossorigin=""></script>
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <h1>Where is the ISS ?</h1>
     <p>
         latitude: <span id="lat"></span><br />
-        longitude: <span id="lon"></span>
+        longitude: <span id="lon"></span><br />
+        Speed: <span id="speed"></span><br />
+        Altitude: <span id="alt"></span><br />
+        Time of day: <span id="time"></span>
     </p>
 
     <div id="map"></div>
 
+    <iframe width="480" height="270" src="https://ustream.tv/embed/17074538" scrolling="no" allowfullscreen
+        webkitallowfullscreen frameborder="0" style="border: 0 none transparent;" autoplay></iframe>
+
+
     <script src="scripts.js"></script>
 </body>
+
 </html>

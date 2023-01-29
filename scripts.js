@@ -9,6 +9,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// add video to map
+
+
+
  // Create a unique marker
  const issMarker = L.icon({
     iconUrl: 'iss.png',
@@ -29,16 +33,21 @@ async function getISS() {
     const data =await response.json();
 
     //Destructuring: take info out of an array and put them into a veritable
-    const { latitude, longitude } = data;
+    const { latitude, longitude, velocity, altitude ,visibility,  } = data;
     
     //Use data to position marker on the map
     marker.setLatLng([latitude, longitude]);
     map.setView([latitude, longitude], 3);
+    
 
     //Display data into the HTML document  
-    document.getElementById('lat').textContent = (data.latitude);
-    document.getElementById('lon').textContent = (data.longitude);
+    document.getElementById('lat').textContent = latitude.toFixed(2);
+    document.getElementById('lon').textContent = longitude.toFixed(2);
+    document.getElementById('speed').textContent= velocity.toFixed(2) + ` KPH`;
+    document.getElementById('alt').textContent= altitude.toFixed(2) + ` Kilometers`;
+    document.getElementById('time').textContent= visibility;
 }
+
 
     //Run the function
     getISS();
